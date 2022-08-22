@@ -1,0 +1,453 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'SpaceGrotesk';
+    src: url(../fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+a{
+    text-decoration: none;
+    color: hsl(279, 6%, 55%);
+}
+
+a:hover{
+    color: hsl(278, 68%, 11%);
+    text-decoration: underline;
+}
+
+.to-Uppercase {
+    text-transform: uppercase;
+}
+
+html{
+    font-family: 'SpaceGrotesk', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+input::placeholder { 
+    font-family: 'SpaceGrotesk', Arial, Helvetica, sans-serif;
+    opacity: 1; 
+  }
+
+main{
+    display: flex;
+    height: 800px;
+    flex-flow: wrap;
+}
+/* Start left-side flex */
+#left-side{
+    flex: 60%;
+    background-image: url(../images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    display: flex;
+    flex-flow: column ;
+    /* align-content: center; */
+    align-items: center;
+    justify-content: center;
+}
+/* front card */
+#front-card{
+    width: 50%;
+    height: 245px;
+    background-image: url(../images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0 0 40px -60px; 
+    position: relative;
+} 
+
+#circle_1{
+    position: absolute;
+    width: 12%;
+    height: 21%;
+    border-radius: 50%;
+    background-color: hsl(0, 0%, 100%);
+    left: 5%;
+    top: 10%;
+}
+
+
+#circle_2{
+    position: absolute;
+    width: 6.5%;
+    height: 12%;
+    border: 2px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+    left: 20%;
+    top: 15%;
+}
+
+#example_number{
+    color: hsl(0, 0%, 100%);
+    width: 100%;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 65%;
+    transform: translateY(-65%);
+    text-align: center;
+}
+
+#example_name{
+    position: absolute;
+    color: hsl(0, 0%, 100%);
+    bottom: 10%;
+    left: 8%;
+}
+
+#example_expire{
+    position: absolute;
+    color: hsl(0, 0%, 100%);
+    bottom: 10%;
+    right: 8%;
+}
+/* backcard */
+#back-card{
+    width: 50%;
+    height: 245px;
+    background-image: url(../images/bg-card-back.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-left: 60px; 
+    position: relative;
+}
+
+#example_cvc{
+    position: absolute;
+    color: hsl(0, 0%, 100%);
+    top: 45%;
+    right: 14%;
+}
+
+@media only screen and (max-width: 1368px) {
+    #example_number{
+        font-size: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    #example_expire, #example_name{
+        bottom: 25%;
+
+    }
+
+    #example_cvc{
+        top: 37%
+    }
+
+    #front-card{
+        margin: 0 0 30px -50px; 
+    }
+
+    #back-card{
+        margin-left: 70px;
+    }
+
+    #circle_1{
+        width: 10%;
+        height: 15%;
+    }
+
+    #circle_2{
+        width: 5%;
+        height: 8%;
+    }
+}
+
+@media only screen and (max-width: 1186px) {
+    #example_number{
+        font-size: 1.2rem;
+        top: 45%;
+        transform: translateY(-45%);
+    }
+
+    #example_expire, #example_name{
+        bottom: 35%;
+
+    }
+
+    #example_cvc{
+        top: 30%
+    }
+    
+    #front-card{
+        margin-left: -20px; 
+    }
+
+    #back-card{
+        margin-left: 100px;
+    }
+}
+
+@media only screen and (max-width: 988px) {
+    #example_number{
+        top: 35%;
+        transform: translateY(-35%);
+    }
+
+    #example_expire, #example_name{
+        bottom: 40%;
+
+    }
+
+    #example_cvc{
+        top: 25%
+    }
+}
+
+@media only screen and (max-width: 890px){
+    #example_number{
+        font-size: 1rem;
+        top: 30%;
+        transform: translateY(-30%);
+    }
+
+    #example_expire, #example_name{
+        font-size: 0.8rem;
+        bottom: 50%;
+    }
+
+    #example_cvc{
+        font-size: 0.8rem;
+
+    }
+}
+
+
+/* End left-side flex */
+#right-side{
+    flex: 40%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.label{
+    font-weight: bold;
+    color: hsl(278, 68%, 11%);
+    display: block;
+}
+
+.input{
+    height: 50px;
+    margin: 16px 0;
+}
+
+
+#thirdRowExpire, #thirdRowCvc{
+    display: inline-block;
+}
+
+#name, #number, #cardExpireCvc, #submit-button{
+    width: 90%;
+}
+
+#cardExpireCvc{
+    position: relative;
+}
+
+#thirdRowCvc{
+    position: absolute;
+    left: 50%;
+}
+
+.thirdRowLeftInput{
+    width: 100px;
+}
+
+#submit-button{
+    height: 45px;
+    background-color: hsl(278, 68%, 11%);
+    color: hsl(0, 0%, 100%);
+    font-family: 'SpaceGrotesk', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 4%;
+    margin-top: 25px;
+}
+
+#submit-button:hover{
+    color: hsl(278, 68%, 11%);
+    background-color: hsl(279, 6%, 55%);
+}
+
+@media only screen and (max-width: 1200px) {
+    #thirdRowCvc{
+        left: 60%;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .thirdRowLeftInput{
+        width: 80px;
+    }
+
+    #cvc{
+        width: 70%;
+    }
+}
+
+
+/* Mobile Edit */
+@media only screen and (max-width: 824px){
+    #left-side{
+        flex: 100%;
+        background-image: url(../images/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        background-size: 100% 50%;
+        flex-direction: column-reverse;
+    }
+
+    #circle_1{
+        width: 12%;
+        height: 21%;
+        left: 5%;
+        top: 10%;
+    }
+    
+    
+    #circle_2{
+        width: 6.5%;
+        height: 12%;
+        left: 20%;
+        top: 15%;
+    }
+    
+    #example_number{
+        font-size: 1.2rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    #example_name{
+        bottom: 30%;
+        font-size: 1rem;
+    }
+    
+    #example_expire{
+        bottom: 30%;
+        font-size: 1rem;
+    }
+
+    #example_cvc{
+        top: 38%;
+        font-size: 1rem;
+        right: 14%;
+    }
+
+    #front-card{
+        margin-top: -15%;
+        z-index: 1;
+    }
+
+    #right-side{
+        flex: 100%;
+        margin-left: 4%;
+    }
+    
+
+@media only screen and (max-width: 717px){
+    #front-card{
+        height: 210px;
+    }
+
+    #back-card{
+        height: 210px;
+
+    }
+}
+@media only screen and (max-width: 639px){
+    #front-card{
+        height: 175px;
+    }
+
+    #back-card{
+        height: 175px;
+
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #front-card{
+        height: 170px;
+    }
+
+    #back-card{
+        height: 170px;
+
+    }
+} 
+
+@media only screen and (max-width: 524px){
+    main{
+        height: 700px;
+    }
+
+    #front-card{
+        width: 70%;
+        margin-top: -10%;
+    }
+
+    #back-card{
+        width: 70%;
+    }
+
+    #example_cvc{
+        top: 50%;
+        font-size: 1rem;
+        right: 14%;
+    }
+}
+
+@media only screen and (max-width: 476px){
+    #front-card{
+        width: 80%;
+        margin-top: -10%;
+    }
+
+    #back-card{
+        margin-left: 30px; 
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 414px){
+    #front-card{
+        width: 90%;
+        margin-top: -10%;
+    }
+
+    #back-card{
+        margin-left: 20px; 
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 388px){
+    #example_cvc{
+        top: 45%;
+        right: 14%;
+    }
+}
+
+@media only screen and (max-width: 358px){
+    #example_cvc{
+        top: 40%;
+        right: 14%;
+    }
+}
+
+@media only screen and (max-width: 330px){
+    #example_cvc{
+        top: 35%;
+        right: 14%;
+    }
+    
+    #thirdRowCvc{
+        left: 70%;
+    }
+}

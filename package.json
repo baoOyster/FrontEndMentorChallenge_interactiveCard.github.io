@@ -1,0 +1,14 @@
+{
+  "name": "interactive-card-details-form",
+  "version": "1.0.0",
+  "description": "![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Lucas Nghiem",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
+}
