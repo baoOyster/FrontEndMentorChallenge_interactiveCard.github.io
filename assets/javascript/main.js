@@ -42,7 +42,7 @@ parentNodeCvc.appendChild(errorMessageCvc);
 
 //Function Checking 
 function checkName(name) {
-    const regexName = /[a-zA-z ]{1,21}/;
+    const regexName = /[a-zA-Z][a-zA-z ]{1,19}[a-zA-z]/;
     const matchVar = name.match(regexName);
     // console.log(matchVar);
     if(matchVar[0] === name) {
@@ -64,7 +64,7 @@ function checkNumber(number) {
 }
 
 function checkMonth(month) {
-    console.log(Math.floor(month));
+    // console.log(Math.floor(month));
     if(Math.floor(month) > 12 || Math.floor(month) < 1) {
         return false;
     }
@@ -97,10 +97,14 @@ function checkCvc(cvc) {
 
 //Validating data
 function validateData(){
+    let errorCount = 0;
+    
     function createErrorMessage(inputElement, errorMessage){
         const loopAction = () => {
             inputElement.style.border = "2px solid red";
             errorMessage.style.marginBottom = "16px";
+            errorCount += 1;
+
         }
         const changeBack = () => {
             inputElement.style.border = "1px solid black";
@@ -108,40 +112,40 @@ function validateData(){
             errorMessage.style.marginBottom = "0px";
         }
         if(inputElement.value === ""){
-            loopAction();
             errorMessage.innerHTML = "*Information required*";
+            loopAction();
         }else if(inputElement === name){
             if(checkName(inputElement.value) === false){
-                loopAction();
                 errorMessage.innerHTML = "*Invalid Name*";
+                loopAction();
             }else{
                 changeBack();
             }
         }else if(inputElement === number){
             if(checkNumber(inputElement.value) === false){
-                loopAction();
                 errorMessage.innerHTML = "*Invalid Number*";
+                loopAction();
             }else{
                 changeBack();
             }
         }else if(inputElement === expireMonth){
             if(checkMonth(inputElement.value) === false){
-                loopAction();
                 errorMessage.innerHTML = "*Invalid Months*";
+                loopAction();
             }else{
                 changeBack();
             }
         }else if(inputElement === expireYear){
             if(checkYear(inputElement.value) === false){
-                loopAction();
                 errorMessage.innerHTML = "*Invalid Year*";
+                loopAction();
             }else{
                 changeBack();
             }
         }else if(inputElement === cvc){
             if(checkCvc(inputElement.value) === false){
-                loopAction();
                 errorMessage.innerHTML = "*Invalid CVC*";
+                loopAction();
             }else{
                 changeBack();
             }
@@ -149,13 +153,46 @@ function validateData(){
         else{
             changeBack();
         }
+
     }
-    
     
     for(let i = 0; i < inputArray.length; i++) { 
         errorMessageArray[i].style.color = "red";
         errorMessageArray[i].style.fontSize = "16px";
-        createErrorMessage(inputArray[i], errorMessageArray[i]);
+        createErrorMessage(inputArray[i], errorMessageArray[i]);     
+        // console.log(errorCount);
+    }
+    console.log(errorCount);
+    //Change screen logic
+    const rightSide= document.getElementById("right-side");
+    
+    if(errorCount === 0){
+        //left side
+        const cardName = document.getElementById("example_name");
+        cardName.innerHTML = name.value;
+        
+        const cardCvc = document.getElementById("example_cvc");
+        cardCvc.innerHTML = cvc.value;
+        
+        const cardNumber = document.getElementById("example_number");
+        const newCardNumber = number.value;
+        cardNumber.innerHTML = newCardNumber;
+
+        const monthCol = document.getElementById("monthCol");
+        monthCol.innerHTML = expireMonth.value;
+        const yearCol = document.getElementById("yearCol");
+        yearCol.innerHTML = expireYear.value;
+
+        //right side
+        rightSide.innerHTML = '<img id="rightImage" src="assets/images/icon-complete.svg"/> <h2>THANK YOU!</h2> <p>We\'ve added your card details</p> <button id="continue-button" onClick="window.location.reload();">Continue</button>';
+        rightSide.style.textAlign = "center"; 
+        const rightImage = document.getElementById("rightImage");
+        rightImage.style.width = "80px";
+        rightImage.style.height = "80px";
+        rightImage.style.alignSelf = "center";
+        const continueButton = document.getElementById("continue-button");
+        continueButton.style.marginLeft = "20px";
+        continueButton.style.marginRight = "20px";
     }
 }
 
