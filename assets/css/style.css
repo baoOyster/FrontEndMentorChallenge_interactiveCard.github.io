@@ -137,7 +137,7 @@ main{
     }
 
     #example_cvc{
-        top: 37%
+        top: 37%;
     }
 
     #front-card{
@@ -172,7 +172,7 @@ main{
     }
 
     #example_cvc{
-        top: 30%
+        top: 30%;
     }
     
     #front-card{
@@ -196,7 +196,7 @@ main{
     }
 
     #example_cvc{
-        top: 25%
+        top: 25%;
     }
 }
 
@@ -236,8 +236,12 @@ main{
 .input{
     height: 50px;
     margin: 16px 0;
+    border-radius: 10px;
 }
 
+input:focus{
+    border: 3px solid hsl(278, 80%, 70%) !important;
+}
 
 #thirdRowExpire, #thirdRowCvc{
     display: inline-block;
@@ -266,7 +270,7 @@ main{
     color: hsl(0, 0%, 100%);
     font-family: 'SpaceGrotesk', Arial, Helvetica, sans-serif;
     font-weight: bold;
-    border-radius: 4%;
+    border-radius: 10px;
     margin-top: 25px;
 }
 
@@ -348,8 +352,7 @@ main{
         flex: 100%;
         margin-left: 4%;
     }
-    
-
+}
 @media only screen and (max-width: 717px){
     #front-card{
         height: 210px;

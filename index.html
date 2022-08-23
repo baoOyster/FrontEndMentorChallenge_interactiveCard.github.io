@@ -29,23 +29,24 @@
         <label for="name" class="to-Uppercase label">Cardholder Name</label>
         
         <input type="text" class="input" id="name" name="name" placeholder="e.g Nghiêm Gia Bảo">
+
       </div>
         
       <div id="cardHolderNumber">
         <label for="number" class="to-Uppercase label">Card Number</label>
         
-        <input type="text" class="input" id="number" name="number" placeholder="e.g 1234 5678 9123 0000">
+        <input type="number" class="input" id="number" name="number" placeholder="e.g 1234 5678 9123 0000">
       </div>
 
       <div id="cardExpireCvc">
         <div id="thirdRowExpire">
-          <label for="expire_day" class="to-Uppercase label">exp.date (MM/YY)</label>
-          <input type="text" class="input thirdRowLeftInput" id=expire_day name="expire_month" placeholder="MM" class="expire">
-          <input type="text" class="input thirdRowLeftInput" name="expire_year" placeholder="YY" class="expire">
+          <label for="expire_month" class="to-Uppercase label">exp.date (MM/YY)</label>
+          <input type="number" class="input thirdRowLeftInput" id="expire_month" name="expire_month" placeholder="MM" class="expire">
+          <input type="number" class="input thirdRowLeftInput" id="expire_year" name="expire_year" placeholder="YY" class="expire">
         </div>
         <div id="thirdRowCvc">
           <label for="cvc" class="to-Uppercase label thirdRowRight"> cvc</label>
-          <input type="text" class="input" id="cvc" name="cvc" placeholder="e.g 123">
+          <input type="number" class="input" id="cvc" name="cvc" placeholder="e.g 123">
         </div>
       </div>
         
@@ -57,34 +58,6 @@
       </div>
     </div>
   </main>
-
-
-  <!-- 0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-
-  Thank you!
-  We've added your card details
-  Continue
-   -->
   
 </body>
 </html>
