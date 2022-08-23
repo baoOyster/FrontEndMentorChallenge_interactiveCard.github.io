@@ -62,11 +62,6 @@ main{
     position: relative;
 } 
 
-.numCol+.numCol::before{
-    content: "";
-    margin-right: 2%;
-}
-
 #circle_1{
     position: absolute;
     width: 12%;

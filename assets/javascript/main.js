@@ -175,7 +175,11 @@ function validateData(){
         cardCvc.innerHTML = cvc.value;
         
         const cardNumber = document.getElementById("example_number");
-        const newCardNumber = number.value;
+        let newCardNumber = number.value;
+        newCardNumber = newCardNumber.toString();
+        for(let i = 4; i < (newCardNumber.length - 1); i += 5) {
+            newCardNumber = newCardNumber.substring(0, i) + " " + newCardNumber.substring(i, newCardNumber.length);
+        }
         cardNumber.innerHTML = newCardNumber;
 
         const monthCol = document.getElementById("monthCol");
