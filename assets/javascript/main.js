@@ -40,7 +40,7 @@ errorMessageArray.push(errorMessageCvc);
 const parentNodeCvc = cvc.parentNode;
 parentNodeCvc.appendChild(errorMessageCvc);
 
-//Function Checking 
+//Validating the value of the input from user
 function checkName(name) {
     const regexName = /[a-zA-Z][a-zA-z ]{1,19}[a-zA-z]/;
     const matchVar = name.match(regexName);
@@ -95,7 +95,7 @@ function checkCvc(cvc) {
     return false;
 }
 
-//Validating data
+//Changing style when validating
 function validateData(){
     let errorCount = 0;
     
@@ -166,6 +166,7 @@ function validateData(){
     //Change screen logic
     const rightSide= document.getElementById("right-side");
     
+    //Change card information
     if(errorCount === 0){
         //left side
         const cardName = document.getElementById("example_name");
